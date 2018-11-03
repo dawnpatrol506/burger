@@ -18,4 +18,10 @@ router.put('/', (req, res) => {
     });
 })
 
+router.post('/', (req, res) => {
+    orm.insertOne(req.body['new-burger'], result => {
+        res.send({status: 200});
+    })
+})
+
 module.exports = router;

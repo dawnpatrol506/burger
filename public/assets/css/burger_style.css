@@ -1,0 +1,23 @@
+html{
+    background-image: url('https://stmed.net/sites/default/files/bob%27s-burgers-wallpapers-31529-2438063.jpg');
+    background-repeat: no-repeat;
+}
+
+p{
+    font-size: 1.6em;
+    display: inline-block;
+    margin: 0px 8px;
+}
+
+button{
+    margin: 0px 8px;
+}
+
+input{
+    background-color: white;
+}
+
+li{
+    border-bottom: 2px black solid;
+    padding: 2px;
+}

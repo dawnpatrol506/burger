@@ -1,7 +1,31 @@
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            <li>{{burger_name}}<button class="remove-burger" data-value="{{id}}">Eat Burger</button></li>
-        {{/unless}}
-    {{/each}}
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col s6">
+            <h4>Burgers awaiting consumption:</h4>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li><p>{{burger_name}}</p><button class="remove-burger btn-small blue-grey darken-2 waves-effect waves-light" data-value="{{id}}">Eat Burger</button></li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col s6">
+            <h4>Eaten burgers</h4>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li class="disabled"><p>{{burger_name}}</p></li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <form action="/" method="POST">
+            <label for='new-burger'>New Burger</label>
+            <input id="new-burger" type="text" name="new-burger">
+            <button type="submit" id="submit-new-burger" class="btn blue-grey darken-2 waves-effect waves-dark">Submit New Burger</button>
+        </form>
+    </div>
+</div>

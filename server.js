@@ -2,10 +2,11 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const PORT = process.env.PORT || 8080;
 const burgerRouter = require('./controllers/burgers_controller');
+const path = require('path');
 
 const app = express();
 
-app.set(express.static(`${__dirname}/public`));
+app.use(express.static(path.join(__dirname, '/public')));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
